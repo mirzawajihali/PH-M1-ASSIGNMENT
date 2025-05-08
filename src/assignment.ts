@@ -110,3 +110,100 @@ function processValue(value : string | number): number{
 }
 processValue("hello");
 processValue(10);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+interface Product {
+    name :string;
+    price: number; }
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+    if (products.length === 0) {
+        return null;
+    }
+    let expensive = products[0]
+    for(let i=1; i < products.length; i++){
+        if(products[i].price > expensive.price){
+            expensive = products[i];
+        }
+
+   
+}
+return expensive;
+    }
+
+ const products = [
+     { name: "Pen", price: 10 },
+     { name: "Notebook", price: 25 },
+     { name: "Bag", price: 500 }
+   ];
+   
+   console.log(getMostExpensiveProduct(products));
+
+
+
+
+
+
+ 
+   
+
+
+
+   enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+  }
+
+  function getDayType(day : Day): string{
+    if (day === Day.Monday || day === Day.Tuesday || day === Day.Wednesday || day === Day.Thursday || day === Day.Friday) {
+        console.log("Weekday")
+        return "Weekday";
+    } else  {
+        console.log("Weekend")
+        return "Weekend";
+    }
+  }
+
+  getDayType(Day.Monday);  
+  getDayType(Day.Sunday); 
+
+
+
+
+
+
+
+
+
+  async function squareAsync(n : number): Promise<number> {
+   return new Promise((resolve, reject) => {
+    if(n<0){
+        reject("Negative number not allowed");
+    }
+    else{
+        setTimeout(() => resolve(n*n), 1000);
+    }
+   })
+  }
+
+
+  squareAsync(4).then(console.log);
+   
+squareAsync(-3).catch(console.error);
