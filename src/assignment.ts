@@ -1,20 +1,18 @@
 function formatString(input: string, toUpper?: boolean):string{
 
    if(toUpper || toUpper === undefined){
+    console.log(input.toUpperCase());
+
         return input.toUpperCase();
        
     }
     else{
+        console.log(input.toLowerCase());
         return input.toLowerCase();
         
     }
 
 }
-
-console.log(formatString("Hello"));
-console.log(formatString("Hello", true));
-console.log(formatString("Hello", false));
-
 
 
 
@@ -28,14 +26,8 @@ function filterByRating(items: {title :string, rating : number}[]): {title :stri
    return filteredItems;
 }
 
-const books = [
-    { title: "Book A", rating: 4.5 },
-    { title: "Book B", rating: 3.2 },
-    { title: "Book C", rating: 5.0 }
-  ];
-  
-  filterByRating(books);
 
+ 
 
 
 
@@ -45,11 +37,6 @@ const books = [
     console.log(concatenatedArray);
     return concatenatedArray;
 }
-
-concatenateArrays(["a", "b", "d"], ["c"]);      
-concatenateArrays([1, 2], [3, 4], [5]); 
-
-
 
 
 
@@ -64,8 +51,8 @@ class Vehicle{
         this.make = make;
         this.year = year;
     }
-    getInfo(): string{
-        return `Make: ${this.make}, Year: ${this.year}`;
+    getInfo(): void{
+        console.log(`Make: ${this.make}, Year: ${this.year}`);
     }
 }
 
@@ -77,17 +64,14 @@ class Car extends Vehicle{
         this.model = model;
     }
 
-    getModel():string{
-        return `Model : ${this.model}`;
+    getModel():void{
+        console.log(`Model : ${this.model}`);
+        
     }
    
 
 }
 
-const car = new Car("Toyota", 2020, "Corolla");
-
-console.log(car.getInfo());
-console.log(car.getModel());
 
 
 
@@ -108,9 +92,6 @@ function processValue(value : string | number): number{
         return value*2;
     }
 }
-processValue("hello");
-processValue(10);
-
 
 
 
@@ -140,16 +121,10 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
 
    
 }
+console.log(expensive);
 return expensive;
     }
 
- const products = [
-     { name: "Pen", price: 10 },
-     { name: "Notebook", price: 25 },
-     { name: "Bag", price: 500 }
-   ];
-   
-   console.log(getMostExpensiveProduct(products));
 
 
 
@@ -181,10 +156,6 @@ return expensive;
     }
   }
 
-  getDayType(Day.Monday);  
-  getDayType(Day.Sunday); 
-
-
 
 
 
@@ -204,6 +175,3 @@ return expensive;
   }
 
 
-  squareAsync(4).then(console.log);
-   
-squareAsync(-3).catch(console.error);
